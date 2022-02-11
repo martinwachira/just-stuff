@@ -219,3 +219,35 @@ function sockMerchant(n, ar) {
 sockMerchant(n, ar);
 
 /** ------------------------------------------------------------------------ */
+
+/** Buble Sort O(n^2) */
+let nums1 = [1, 3, 6],
+  nums2 = [7, 9],
+  combined = [],
+  swapped = false;
+
+for (let i = 0; i < nums1.length; i++) {
+  combined.push(nums1[i]);
+  // console.log('combined n1', combined)
+}
+for (let x = 0; x < nums2.length; x++) {
+  combined.push(nums2[x]);
+  // console.log("combined n2", combined);
+}
+
+for (let p = 0; p < combined.length; p++) {
+  swapped = false;
+  for (let y = 0; y < combined.length; y++) {
+    if (combined[y] > combined[y + 1]) {
+      let temp = combined[y];
+      combined[y] = combined[y + 1];
+      combined[y + 1] = temp;
+      swapped = true;
+    }
+  }
+  if (!swapped) {
+    break;
+  }
+}
+
+console.log("combined =", combined);
