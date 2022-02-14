@@ -220,19 +220,25 @@ sockMerchant(n, ar);
 
 /** ------------------------------------------------------------------------ */
 
+/**
+ * calculate and get the median value of an array of numbers in combined from findMedianSortedArrays function
+ */
+
 /** Buble Sort O(n^2) */
-let nums1 = [1, 3, 6],
-  nums2 = [7, 9],
+
+//Soln 1
+
+let nums1 = [1, 4, 7],
+  nums2 = [8, 9],
   combined = [],
-  swapped = false;
+  swapped = false,
+  med = 0;
 
 for (let i = 0; i < nums1.length; i++) {
   combined.push(nums1[i]);
-  // console.log('combined n1', combined)
 }
 for (let x = 0; x < nums2.length; x++) {
   combined.push(nums2[x]);
-  // console.log("combined n2", combined);
 }
 
 for (let p = 0; p < combined.length; p++) {
@@ -251,3 +257,28 @@ for (let p = 0; p < combined.length; p++) {
 }
 
 console.log("combined =", combined);
+
+if (combined.length % 2 === 0) {
+  med = (combined[combined.length / 2] + combined[combined.length / 2 - 1]) / 2;
+  console.log("med 1 =", med);
+} else {
+  med = combined[Math.floor(combined.length / 2)];
+  console.log("med 2 =", med);
+}
+
+// Soln 2
+
+// const findMedianSortedArrays = (nums1, nums2) => {
+let newAr = nums1.concat(nums2);
+newAr.sort((a, b) => a - b);
+let median = 0;
+if (newAr.length % 2 === 0) {
+  median = (newAr[newAr.length / 2] + newAr[newAr.length / 2 - 1]) / 2;
+} else {
+  median = newAr[Math.floor(newAr.length / 2)];
+}
+console.log("median =", median);
+return median;
+// };
+
+// findMedianSortedArrays([2, 5, 6], [1, 7]);
