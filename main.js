@@ -221,14 +221,14 @@ sockMerchant(n, ar);
 /** ------------------------------------------------------------------------ */
 
 /**
- * calculate and get the median value of an array of numbers in combined from findMedianSortedArrays function
+ * calculate and get the median value of an array of numbers
  */
 
 /** Buble Sort O(n^2) */
 
 //Soln 1
 
-let nums1 = [1, 4, 7],
+let nums1 = [1, 4],
   nums2 = [8, 9],
   combined = [],
   swapped = false,
@@ -281,4 +281,4 @@ console.log("median =", median);
 return median;
 // };
 
-// findMedianSortedArrays([2, 5, 6], [1, 7]);
+// findMedianSortedArrays([2, 5, 6], [4, 7]);
