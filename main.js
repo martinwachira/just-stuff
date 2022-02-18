@@ -281,4 +281,4 @@ console.log("median =", median);
 return median;
 // };
 
-// findMedianSortedArrays([2, 5, 6], [4, 7]);
+// findMedianSortedArrays([2, 5, 6], [4, 7, 9]);
