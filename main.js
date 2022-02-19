@@ -268,17 +268,41 @@ if (combined.length % 2 === 0) {
 
 // Soln 2
 
-// const findMedianSortedArrays = (nums1, nums2) => {
-let newAr = nums1.concat(nums2);
-newAr.sort((a, b) => a - b);
-let median = 0;
-if (newAr.length % 2 === 0) {
-  median = (newAr[newAr.length / 2] + newAr[newAr.length / 2 - 1]) / 2;
-} else {
-  median = newAr[Math.floor(newAr.length / 2)];
-}
-console.log("median =", median);
-return median;
-// };
+const findMedianSortedArrays = (nums1, nums2) => {
+  let newAr = nums1.concat(nums2);
+  newAr.sort((a, b) => a - b);
+  let median = 0;
+  if (newAr.length % 2 === 0) {
+    median = (newAr[newAr.length / 2] + newAr[newAr.length / 2 - 1]) / 2;
+  } else {
+    median = newAr[Math.floor(newAr.length / 2)];
+  }
+  console.log("median =", median);
+  return median;
+};
 
-// findMedianSortedArrays([2, 5, 6], [4, 7]);
+findMedianSortedArrays([2, 5, 6], [4, 7]);
+
+/** ------------------------------------------------------------------------ */
+
+// Given a string s, return the longest palindromic substring in s.
+// You may assume that the maximum length of s is 1000, and there exists one unique longest palindromic substring.
+
+const longestPalindrome = (s) => {
+  let longest = "";
+  for (let i = 0; i < s.length; i++) {
+    let temp = "";
+    for (let j = i; j < s.length; j++) {
+      temp += s[j];
+      console.log("temp", temp);
+      if (temp === temp.split("").reverse().join("")) {
+        if (temp.length > longest.length) {
+          longest = temp;
+        }
+      }
+    }
+  }
+  console.log("longest =", longest);
+  return longest;
+};
+longestPalindrome("bccabaad");
