@@ -294,7 +294,6 @@ const longestPalindrome = (s) => {
     let temp = "";
     for (let j = i; j < s.length; j++) {
       temp += s[j];
-      console.log("temp", temp);
       if (temp === temp.split("").reverse().join("")) {
         if (temp.length > longest.length) {
           longest = temp;
@@ -306,3 +305,5 @@ const longestPalindrome = (s) => {
   return longest;
 };
 longestPalindrome("bccabaad");
+
+/** ------------------------------------------------------------------------ */
