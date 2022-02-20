@@ -304,6 +304,6 @@ const longestPalindrome = (s) => {
   console.log("longest =", longest);
   return longest;
 };
-longestPalindrome("bccabaad");
+longestPalindrome("cbbd");
 
 /** ------------------------------------------------------------------------ */
