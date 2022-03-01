@@ -285,25 +285,89 @@ findMedianSortedArrays([2, 5, 6], [4, 7]);
 
 /** ------------------------------------------------------------------------ */
 
-// Given a string s, return the longest palindromic substring in s.
-// You may assume that the maximum length of s is 1000, and there exists one unique longest palindromic substring.
+// Given a string s, return the longest palindromic substring in s using big o notation.
 
 const longestPalindrome = (s) => {
-  let longest = "";
-  for (let i = 0; i < s.length; i++) {
-    let temp = "";
-    for (let j = i; j < s.length; j++) {
-      temp += s[j];
-      if (temp === temp.split("").reverse().join("")) {
-        if (temp.length > longest.length) {
-          longest = temp;
+  //   let max = 0;
+  //   let longest = "";
+
+  //   for (let i = 0; i < s.length; i++) {
+  //     let current = s[i];
+  //     let currentLength = 1;
+  //     for (let j = i + 1; j < s.length; j++) {
+  //       if (s[j] === s[i]) {
+  //         current += s[j];
+  //         currentLength++;
+  //       } else {
+  //         break;
+  //       }
+  //     }
+  //     for (let x = i - 1; x >= 0; x--) {
+  //       if (s[x] === s[i]) {
+  //         current = s[x] + current;
+  //         currentLength++;
+  //       } else {
+  //         break;
+  //       }
+  //     }
+  //     if (currentLength > max) {
+  //       max = currentLength;
+  //       longest = current;
+  //     }
+  //   }
+  //   console.log("longest =", longest);
+  //   return longest;
+  // };
+
+  /** ---------------------------------------------------------------- */
+
+  //   let str = s.split("");
+  //   let longest = "";
+  //   for (let i = 0; i < str.length; i++) {
+  //     for (let j = i + 1; j < str.length; j++) {
+  //       let temp = "";
+  //       temp = temp.concat(str[i], str[j]);
+  //       let x = i;
+  //       let y = j;
+  //       while (x > 0 && y < str.length) {
+  //         if (str[x] === str[y]) {
+  //           temp = temp.concat(str[x], str[y]);
+  //           x--;
+  //           y++;
+  //         } else {
+  //           break;
+  //         }
+  //       }
+  //       if (temp.length > longest.length) {
+  //         longest = temp;
+  //       }
+  //     }
+  //   }
+  //   console.log("longest palindrome =", longest);
+  //   return longest;
+  // };
+
+  /** ---------------------------------------------------------------- */
+  let longest = 0;
+  let longestPalindrome = "";
+  for (let i = 0; i <= s.length; i++) {
+    let j = 0;
+    while (j < s.length) {
+      let sub = s.substring(i, j);
+      let rev = sub.split("").reverse().join("");
+      if (sub === rev) {
+        if (sub.length >= longest) {
+          longest = sub.length;
+          longestPalindrome = sub;
         }
       }
+      j++;
     }
   }
-  console.log("longest =", longest);
-  return longest;
+  console.log("longest palindrome =", longestPalindrome);
+  return longestPalindrome;
 };
-longestPalindrome("cbbd");
 
-/** ------------------------------------------------------------------------ */
+/** ---------------------------------------------------------------- */
+
+longestPalindrome("cbbd");
