@@ -398,3 +398,19 @@ longestPalindrome("aacabdkacaa");
 /**
  * Check if Palindrome
  */
+
+const isPalindrome = (s) => {
+  let initVal = s.toString().split("").join("");
+  let newVal = s.toString().split("").reverse();
+  let reversedVal = newVal.join("");
+  console.log("init", initVal, "reversed", reversedVal);
+  if (initVal === reversedVal) {
+    console.log("True");
+    return true;
+  } else {
+    console.log("False");
+    return false;
+  }
+};
+
+isPalindrome(12221);
