@@ -348,26 +348,53 @@ const longestPalindrome = (s) => {
   // };
 
   /** ---------------------------------------------------------------- */
-  let longest = 0;
-  let longestPalindrome = "";
+  //   let longest = 0;
+  //   let longestPalindrome = "";
+  //   for (let i = 0; i <= s.length; i++) {
+  //     let j = 0;
+  //     while (j < s.length) {
+  //       let sub = s.substring(i, j);
+  //       let rev = sub.split("").reverse().join("");
+  //       if (sub === rev) {
+  //         if (sub.length >= longest) {
+  //           longest = sub.length;
+  //           longestPalindrome = sub;
+  //         }
+  //       }
+  //       j++;
+  //     }
+  //   }
+  //   console.log("longest palindrome =", longestPalindrome);
+  //   return longestPalindrome;
+  // };
+
+  /** ---------------------------------------------------------------- */
+  let longest = "",
+    longestLength = 0;
   for (let i = 0; i <= s.length; i++) {
-    let j = 0;
-    while (j < s.length) {
-      let sub = s.substring(i, j);
-      let rev = sub.split("").reverse().join("");
-      if (sub === rev) {
-        if (sub.length >= longest) {
-          longest = sub.length;
-          longestPalindrome = sub;
+    let left = i,
+      right = i;
+    while (left >= 0 && right <= s.length) {
+      if (s[left] === s[right]) {
+        if (right - left + 1 > longestLength) {
+          longest = s.slice(left, right + 1);
+          longestLength = right - left + 1;
         }
+      } else {
+        break;
       }
-      j++;
+      right++;
+      left--;
     }
   }
-  console.log("longest palindrome =", longestPalindrome);
-  return longestPalindrome;
+  console.log("longest palindrome =", longest);
+  return longest;
 };
 
-/** ---------------------------------------------------------------- */
+longestPalindrome("aacabdkacaa");
 
-longestPalindrome("cbbd");
+/** ------------------------------------------------------------------------ */
+
+/**
+ * Check if Palindrome
+ */
