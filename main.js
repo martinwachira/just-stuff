@@ -411,6 +411,17 @@ const isPalindrome = (s) => {
     console.log("False");
     return false;
   }
+
+  /* ----second solnt--- */
+
+  // if (s < 0 || (s % 10 === 0 && s !== 0)) return false;
+  // let reverse = 0;
+  // let num = s;
+  // while (num > reverse) {
+  //   reverse = (num % 10) + reverse * 10;
+  //   num = parseInt(num / 10);
+  // }
+  // return num === reverse || num === parseInt(reverse / 10);
 };
 
-isPalindrome(12221);
+isPalindrome(02221);
