@@ -425,3 +425,14 @@ const isPalindrome = (s) => {
 };
 
 isPalindrome(02221);
+
+/** ------------------------------------------------------------------------ */
+
+/**
+ * Merge two sorted linked lists, list1 and list2 in a one sorted list.
+ * The list should be made by splicing together the nodes of the first two lists.
+ */
+
+const mergeTwoLists = (list1, list2) => {};
+
+mergeTwoLists([1, 2, 3], [4, 5, 6]);
