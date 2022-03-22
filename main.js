@@ -433,6 +433,29 @@ isPalindrome(02221);
  * The list should be made by splicing together the nodes of the first two lists.
  */
 
-const mergeTwoLists = (list1, list2) => {};
+const mergeTwoLists = (list1, list2) => {
+  let newList = { val: null, next: null };
+  let current = newList;
+  while (list1 && list2) {
+    if (list1.val <= list2.val) {
+      current.next = list1;
+      list1 = list1.next;
+    } else {
+      current.next = list2;
+      list2 = list2.next;
+    }
+    current = current.next;
+  }
+  if (list1 == null) {
+    current.next = list2;
+    list2;
+  }
+  if (list2 == null) {
+    current.next = list1;
+    list1;
+  }
+  console.log("newList =", newList);
+  return newList.next;
+};
 
-mergeTwoLists([1, 2, 3], [4, 5, 6]);
+mergeTwoLists([1, 2], [3, 4, 5]);
