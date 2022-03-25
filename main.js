@@ -487,3 +487,32 @@ const mergeTwoLists = (list1, list2) => {
 mergeTwoLists([1, 6], [2, 4, 5]);
 
 /** ------------------------------------------------------------------------ */
+
+/** Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
+ * determine if the input string is valid. */
+
+const isValid = (str) => {
+  s = [...str];
+  let stack = [];
+  let map = {
+    "(": ")",
+    "{": "}",
+    "[": "]",
+  };
+  for (let i = 0; i < s.length; i++) {
+    if (map[s[i]]) {
+      stack.push(map[s[i]]);
+      console.log("stack =", stack, "s[i] =", s[i]);
+    } else {
+      if (s[i] !== stack.pop()) {
+        console.log("false");
+        // return false;
+      }
+      console.log("true");
+      // return true;
+    }
+  }
+  return stack.length === 0;
+};
+
+isValid("(){}}{");
