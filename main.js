@@ -1,3 +1,32 @@
+/**
+ *
+ * @param {helpers}
+ * @returns
+ *
+ * Helpers
+ */
+
+/**
+ const string = 'word';
+
+ // Option 1
+ string.split('');
+ 
+ // Option 2
+ [...string];
+ 
+ // Option 3
+ Array.from(string);
+ 
+ // Option 4
+ Object.assign([], string);
+ 
+ // Result:
+ // ['w', 'o', 'r', 'd']
+ */
+
+/** ------------------------------------------------------------------------ */
+
 // Given a string s="abcabcbb", find the length of the longest substring without repeating characters.
 
 const lengthOfLongestSubstring = (s) => {
@@ -456,3 +485,5 @@ const mergeTwoLists = (list1, list2) => {
 };
 
 mergeTwoLists([1, 6], [2, 4, 5]);
+
+/** ------------------------------------------------------------------------ */
