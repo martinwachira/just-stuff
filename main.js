@@ -457,6 +457,21 @@ isPalindrome(02221);
 
 /** ------------------------------------------------------------------------ */
 
+// Palindrom -- string
+
+function solution(inputString) {
+    const len = inputString.length;
+    for(let i=0; i<=len; i++){
+        if(inputString[i] !== inputString[len - 1 - i]){
+            return false;
+        }
+    }
+    return true;
+}
+solution("aabaa")
+
+/** ------------------------------------------------------------------------ */
+
 /**
  * Merge two sorted linked lists, list1 and list2 in a one sorted list.
  * The list should be made by splicing together the nodes of the first two lists.
