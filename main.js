@@ -551,7 +551,34 @@ function solution(inputArray) {
     return num;
 }
 
-inputArray[3,6,-3,7,4,5,6,2]
+solution([3,6,-3,7,4,5,6,2])
+
+/** ------------------------------------------------------------------------ */
+
+// Making array consecutive by counting the missing no of values
+
+function ArrConsecutive(statues) {
+    let s=statues.length,
+        num=0;
+    for(let i=0; i<s; i++){
+        for(let x=0; x<s; x++){
+            if(statues[x] > statues[x +1]){
+                var t = statues[x];
+                statues[x] = statues[x+1];
+                statues[x+1] = t;
+            }
+        }        
+    }
+    for(i=0;i<=statues.length-2;i++){
+        num+=(statues[i+1]-statues[i]-1);
+    }
+    
+    return num;
+}
+
+ArrConsecutive([4,3,5,6,9,7])
+
+
 
 /** ------------------------------------------------------------------------ */
 
