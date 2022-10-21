@@ -531,3 +531,27 @@ const isValid = (str) => {
 };
 
 isValid("(){}}{");
+
+
+/** ------------------------------------------------------------------------ */
+// Pair of adjacent elements with largest product
+
+function solution(inputArray) {
+    const len = inputArray.length;
+    let res1=0,
+        res2=0,
+        num=Number.MIN_SAFE_INTEGER;
+    for(let i=0; i<len; i++){
+       res1=inputArray[i];
+       res2=inputArray[i+1];
+       if(res1*res2 > num){
+           num = res1*res2;
+       }
+    }
+    return num;
+}
+
+inputArray[3,6,-3,7,4,5,6,2]
+
+/** ------------------------------------------------------------------------ */
+
