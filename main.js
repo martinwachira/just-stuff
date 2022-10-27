@@ -582,3 +582,19 @@ ArrConsecutive([4,3,5,6,9,7])
 
 /** ------------------------------------------------------------------------ */
 
+// DB: TEST
+// The resulting table should contain one row with a single column: the product with the lexicographically smallest name and highest amount
+
+
+CREATE PROCEDURE mostExpensive()
+BEGIN
+	SELECT name FROM Products
+    	WHERE (price * quantity) = (SELECT MAX(price * quantity) FROM Products)
+	ORDER BY name
+    	LIMIT 1;
+END
+
+
+/** ------------------------------------------------------------------------ */
+
+
