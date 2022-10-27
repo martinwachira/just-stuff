@@ -597,4 +597,16 @@ END
 
 /** ------------------------------------------------------------------------ */
 
+// The resulting table should contain the names of the participants who took the 4th to 8th places inclusive, 
+// sorted in descending order of their places.
+
+CREATE PROCEDURE solution()
+BEGIN
+	SELECT name from leaderBoard
+	ORDER BY score DESC
+	LIMIT 3,5;
+END
+
+
+/** ------------------------------------------------------------------------ */
 
