@@ -610,3 +610,23 @@ END
 
 /** ------------------------------------------------------------------------ */
 
+/*
+The resulting table should contain four columns, weekday, mischief_date, author, and title, 
+where weekday is the weekday of mischief_date (0 for Monday, 1 for Tuesday, and so on, with 6 for Sunday). 
+The table should be sorted by the weekday column, 
+and for each weekday Huey's mischief should go first, Dewey's should go next, and Louie's should go last. In case of a tie, 
+mischief_date should be a tie-breaker. If there's still a tie, the record with the lexicographically smallest title should go first.
+*/
+
+CREATE PROCEDURE solution()
+BEGIN
+	SELECT (DAYOFWEEK(mischief_date)+5) % 7 as weekday, mischief_date, author, title
+	FROM mischief
+	ORDER BY weekday, CASE author WHEN 'Huey' THEN 1 WHEN 'Dewey' THEN 2 WHEN 'Louie' THEN 3 END,
+	mischief_date, title ASC;
+END
+
+
+/** ------------------------------------------------------------------------ */
+
+
